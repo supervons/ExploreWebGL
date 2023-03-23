@@ -1,0 +1,31 @@
+{
+  "name": "explorewebgl",
+  "version": "1.0.0",
+  "description": "To study WebGL, and goal is to make a 3d object.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/supervons/ExploreWebGL.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/supervons/ExploreWebGL/issues"
+  },
+  "homepage": "https://github.com/supervons/ExploreWebGL#readme",
+  "prettier": {
+    "singleQuote": false,
+    "semi": true,
+    "tabWidth": 2,
+    "useTabs": false,
+    "trailingComma": "none",
+    "bracketSpacing": true,
+    "arrowParens": "avoid",
+    "jsxBracketSameLine": false,
+    "proseWrap": "preserve",
+    "printWidth": 80
+  }
+}
