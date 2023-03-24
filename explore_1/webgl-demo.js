@@ -3,20 +3,28 @@ import { drawScene } from "./draw-scene.js";
 main();
 function main() {
   const vsSource = `
-        attribute vec4 aVertexPosition;
+    attribute vec4 aVertexPosition;
 
-        uniform mat4 uModelViewMatrix;
-        uniform mat4 uProjectionMatrix;
-
-        void main() {
-          gl_Position = uProjectionMatrix * uModelViewMatrix * aVertexPosition;
-        }
-      `;
+    uniform mat4 uModelViewMatrix;
+    uniform mat4 uProjectionMatrix;
+    
+    void main() {
+      gl_Position = uProjectionMatrix * uModelViewMatrix * aVertexPosition;
+    }
+  `;
   const fsSource = `
-        void main() {
-          gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);
-        }
-      `;
+    #ifdef GL_ES
+      precision mediump float;
+    #endif
+
+    vec4 red(){
+      return vec4(0.0, 1.0, 1.0, 1.0); //This num calculated as 1/255 * rgb[num] 
+    }
+        
+    void main() {
+      gl_FragColor = red();
+    }
+  `;
   const canvas = document.querySelector("#glcanvas");
   // 初始化 WebGL 上下文
   const gl = canvas.getContext("webgl");
